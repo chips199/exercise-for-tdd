@@ -4,7 +4,7 @@ Some exercises to practice TDD techniques.
 
 ## Exercises
 
-### Exercise 1
+### Exercise 1 - Sum
 
 Write a function that sums all numbers in a string. 
 * The numbers are comma separated
@@ -22,48 +22,47 @@ Variation:
 * Handle negative numbers
 * Use custom separator
 
-### Exercise 2
+### Exercise 2 - Leap Years
 
-Write a function that formats a csv input into a pretty table.
+Write a function that calculates if a given year is a leap year.
 
-Example Input:
+For a leap year the following criteria apply:
+* Years dividable by 4 ARE leap years, BUT
+* Years dividable by 100 ARE NOT leap years, BUT
+* Years dividable by 400 ARE leap years
+
+### Exercise 3 - Manhattan Distance
+
+Manhattan distance is the distance between two points in a grid (like the grid-like street geography of the New York 
+borough of Manhattan) calculated by only taking a vertical and/or horizontal path.
+
+Write a function that is able to calculate the Manhattan Distance between two points.
+
+Examples:
 ```
-Name;Strasse;Ort;Alter
-Peter Pan;Am Hang 5;12345 Einsam;42
-Maria Schmitz;Kölner Straße 45;50123 Köln;43
-Paul Meier;Münchener Weg 1;87654 München;65
-```
-
-The first row should be handled as caption. Column width should respect the largest input for the given column.
-Example Output:
-
-```
-|Name         |Strasse         |Ort          |Alter|
-|-------------|----------------|-------------|-----|
-|Peter Pan    |Am Hang 5       |12345 Einsam |42   |
-|Maria Schmitz|Kölner Straße 45|50123 Köln   |43   |
-|Paul Meier   |Münchener Weg 1 |87654 München|65   |
-```
-
-### Exercise 3
-
-Write a function that converts decimal numbers to roman numbers.
-
-```
-1   -> I
-7   -> VII
-18  -> XVIII
-91  -> XCI
-196 -> CXCVI
-246 -> CCXLVI
-300 -> CCC
+(1, 1) - (1, 1) -> 0
+(5, 4) - (3, 2) -> 4
+(1, 1) - (0, 3) -> 3
 ```
 
-Valid decimal numbers range from 1 to 300
+### Exercise 4 - Count Characters
 
-| Roman Numeral | I   | V   | X   | L   | C   |
-|---------------|-----|-----|-----|-----|-----|
-| Value         | 1   | 5   | 10  | 50  | 100 |
+Write a function that receives a string and counts the characters in it.
+
+```
+IDictionary<char, int> CountCharacters(string input)
+```
+
+Use `_` as representation for space.
+
+The string `Hello World` should return the following result:
+```
+H:1, e:1, l:3, o:2, _:1, W:1, r:1, d:1
+```
+
+Advanced options:
+* Sort the output by highest count first
+* Treat upper and lower case letters the same
 
 ## Execute
 
