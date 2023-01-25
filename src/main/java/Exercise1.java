@@ -2,25 +2,24 @@ import java.util.Arrays;
 
 public class Exercise1 {
 
-    public static int sum(String input) {
-        String[] inputs=input.split(",");
+    public static double sum(String input) {
         if (input.equals("")) {
             return 0;
         }
-        if (inputs.length == 1) {
-            return Integer.parseInt(inputs[0]);
+        String[] numbers = input.split(",");
+
+        double result = 0;
+        for (String number: numbers) {
+            result += Double.parseDouble(number);
         }
-        if (inputs.length == 2) {
-            return Integer.parseInt(inputs[0]) + Integer.parseInt(inputs[1]);
-        }
-        return Integer.parseInt(inputs[0]) + Integer.parseInt(inputs[1]) + Integer.parseInt(inputs[2]);
+        return result;
     }
 
     public static void main(String[] args) {
     String input = "";
 
-    int result = sum(input);
+    double result = sum(input);
 
-    System.out.printf("%s = %d", input, result);
+    // System.out.printf("%s = %d", input, result);
     }
 }
