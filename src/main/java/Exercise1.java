@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Exercise1 {
 
     public static double sum(String input) {
@@ -7,12 +5,11 @@ public class Exercise1 {
             return 0;
         }
         String[] numbers = input.split(",");
-
-        double result = 0;
+        double sum = 0;
         for (String number: numbers) {
-            result += Double.parseDouble(number);
+            sum += Double.parseDouble(number);
         }
-        return result;
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -20,6 +17,6 @@ public class Exercise1 {
 
     double result = sum(input);
 
-    // System.out.printf("%s = %d", input, result);
+    System.out.printf("%s = %d", input, result);
     }
 }

@@ -15,55 +15,10 @@ class Exercise1Test {
         // Then
         assertEquals(0, result);
     }
-
     @Test
-    void testReturns1On1() {
+    void sumReturnsSumForOneInt() {
         // Given
-        String input = "1";
-
-        // When
-        double result = Exercise1.sum(input);
-
-        // Then
-        assertEquals(1, result);
-    }
-    @Test
-    void testReturns2On2() {
-        // Given
-        String input = "2";
-
-        // When
-        double result = Exercise1.sum(input);
-
-        // Then
-        assertEquals(2, result);
-    }
-
-    @Test
-    void testReturnFloatingPoint() {
-        // Given
-        String input = "2.1";
-
-        // When
-        double result = Exercise1.sum(input);
-
-        // Then
-        assertEquals(2.1, result);
-    }
-
-    @Test
-    void testUnknownInput() {
-        // Given
-        String input = "#";
-
-        // When
-        assertThrowsExactly(java.lang.NumberFormatException.class, () -> Exercise1.sum(input));
-    }
-
-    @Test
-    void testTwoInts() {
-        // Given
-        String input = "1,2";
+        String input = "3";
 
         // When
         double result = Exercise1.sum(input);
@@ -71,37 +26,57 @@ class Exercise1Test {
         // Then
         assertEquals(3, result);
     }
-
     @Test
-    void testTwoDouble() {
+    void sumReturnsSumForOtherInt() {
         // Given
-        String input = "1.0,2.5";
+        String input = "5";
 
         // When
         double result = Exercise1.sum(input);
 
         // Then
-        assertEquals(3.5, result);
+        assertEquals(5, result);
     }
 
     @Test
-    void testInvalidInputWithMultiple() {
+    void sumReturnsSumForFloat() {
         // Given
-        String input = "#,2.5";
+        String input = "5.5";
+
+        // When
+        double result = Exercise1.sum(input);
+
+        // Then
+        assertEquals(5.5, result);
+    }
+    @Test
+    void sumThrowsExceptionOnInvalidInput() {
+        // Given
+        String input = "#";
 
         // When
         assertThrowsExactly(java.lang.NumberFormatException.class, () -> Exercise1.sum(input));
     }
-
     @Test
-    void testEndingWithComma() {
+    void sumReturnsSumForMultipleFloats() {
         // Given
-        String input = "1.0,2.5,";
+        String input = "5.5,3.2";
 
         // When
         double result = Exercise1.sum(input);
 
         // Then
-        assertEquals(3.5, result);
+        assertEquals(8.7, result);
+    }
+    @Test
+    void sumCommaAtEnd() {
+        // Given
+        String input = "5.5,3.2,";
+
+        // When
+        double result = Exercise1.sum(input);
+
+        // Then
+        assertEquals(8.7, result);
     }
 }
